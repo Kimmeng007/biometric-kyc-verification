@@ -1,6 +1,0 @@
-**Multimodal Biometric Verification for Mobile Banking KYC** (Python, PyTorch, InsightFace, SpeechBrain)
-
-- Built a face + voice 1:1 identity verification system for mobile-banking KYC (onboarding, login, high-value transfer approval), using pretrained ArcFace (RetinaFace detection + landmark alignment) and ECAPA-TDNN speaker embeddings with cosine matching against enrolled templates.
-- Evaluated with bank-relevant verification metrics (FAR, FRR, EER, DET/ROC) at risk-tiered operating points (FAR 1% login, 0.1% transfers): 99.83% LFW accuracy (0.27% EER on 6,000 pairs) and 2.26% EER on 16,000 cross-session, gender-matched LibriSpeech speaker trials.
-- Designed score-level fusion (impostor z-normalisation + weighted sum) on 80 virtual customers, tuned on a disjoint dev split. Under simulated low-quality mobile capture, fusion roughly halved errors versus the best single modality: EER fell from 0.56% (face) and 7.9% (voice) to 0.28%, and genuine customers blocked at 0.1% FAR fell from 1.11% to 0.49%, with fusion outperforming face in 93–99% of customer-level bootstrap resamples.
-- Packaged as an enroll/verify KYC service API with per-risk-tier thresholds, and documented threshold drift on unseen customers, spoofing/deepfake-injection risks and liveness requirements, plus demographic-fairness validation needed before local deployment.
