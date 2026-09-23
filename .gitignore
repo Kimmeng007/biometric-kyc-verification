@@ -1,0 +1,7 @@
+.venv/
+data/
+cache/
+__pycache__/
+*.pyc
+pretrained_models/
+CLAUDE.md
